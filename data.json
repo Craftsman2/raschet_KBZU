@@ -21,8 +21,8 @@
         }
     },
     "days": {
-        "2026-04-01": {
-            "date": "2026-04-01",
+        "2026-03-31": {
+            "date": "2026-03-31",
             "meals": {
                 "breakfast": [],
                 "lunch": [],
@@ -41,8 +41,62 @@
                         "fats": 13.2,
                         "carbs": 3.4,
                         "id": "69cd339266573"
+                    },
+                    {
+                        "name": "Топпинг",
+                        "source": "buy",
+                        "calories_per_100": 266,
+                        "proteins_per_100": 4.1,
+                        "fats_per_100": 2,
+                        "carbs_per_100": 58,
+                        "total_weight": 100,
+                        "weight": 100,
+                        "calories": 266,
+                        "proteins": 4.1,
+                        "fats": 2,
+                        "carbs": 58,
+                        "id": "69cd36a087340"
                     }
                 ]
+            }
+        },
+        "2026-04-01": {
+            "date": "2026-04-01",
+            "meals": {
+                "breakfast": [],
+                "lunch": [
+                    {
+                        "name": "Чизкейк ягодный",
+                        "source": "recipes",
+                        "calories_per_100": 1003,
+                        "proteins_per_100": 48.5,
+                        "fats_per_100": 41.8,
+                        "carbs_per_100": 107.7,
+                        "total_weight": 648,
+                        "weight": 100,
+                        "calories": 155,
+                        "proteins": 7.5,
+                        "fats": 6.5,
+                        "carbs": 16.6,
+                        "id": "69cd3cf284cb1"
+                    },
+                    {
+                        "name": "Запеканка",
+                        "source": "buy",
+                        "calories_per_100": 204,
+                        "proteins_per_100": 11.6,
+                        "fats_per_100": 7.3,
+                        "carbs_per_100": 23.5,
+                        "total_weight": 100,
+                        "weight": 98,
+                        "calories": 200,
+                        "proteins": 11.4,
+                        "fats": 7.2,
+                        "carbs": 23,
+                        "id": "69cd49e792fda"
+                    }
+                ],
+                "dinner": []
             }
         },
         "2026-04-02": {
@@ -59,30 +113,6 @@
                 "breakfast": [],
                 "lunch": [],
                 "dinner": []
-            }
-        },
-        "2026-04-5": {
-            "date": "2026-04-5",
-            "meals": {
-                "breakfast": [],
-                "lunch": [],
-                "dinner": [
-                    {
-                        "name": "Сметана",
-                        "source": "buy",
-                        "calories_per_100": 116,
-                        "proteins_per_100": 2.6,
-                        "fats_per_100": 15,
-                        "carbs_per_100": 3.9,
-                        "total_weight": 100,
-                        "weight": 88,
-                        "calories": 102,
-                        "proteins": 2.3,
-                        "fats": 13.2,
-                        "carbs": 3.4,
-                        "id": "69cd33a572c33"
-                    }
-                ]
             }
         }
     }
