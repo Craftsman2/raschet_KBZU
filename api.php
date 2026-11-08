@@ -3,7 +3,7 @@ error_reporting(0);
 ini_set('display_errors', 0);
 header('Content-Type: application/json; charset=utf-8');
 $dataFile = 'data.json';
-$csvDir = 'csv/'; // ✅ Файлы CSV в корне
+$csvDir = ''; // Файлы CSV в корне
 
 if (!file_exists($dataFile)) {
     file_put_contents($dataFile, json_encode(array('days' => array()), JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
@@ -288,7 +288,6 @@ function searchCSV($filepath, $query) {
         $name = isset($data['Name']) ? $data['Name'] : (isset($data['Название']) ? $data['Название'] : '');
         if (empty($name)) continue;
         
-        // ✅ mb_stripos для кириллицы
         if (empty($query) || mb_stripos($name, $query, 0, 'UTF-8') !== false) {
             $calories = floatval(isset($data['Калории на 100гр']) ? $data['Калории на 100гр'] : (isset($data['Калорий на 100гр']) ? $data['Калорий на 100гр'] : 0));
             $proteins = floatval(isset($data['Белки на 100гр']) ? $data['Белки на 100гр'] : 0);

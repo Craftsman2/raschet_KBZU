@@ -2,7 +2,7 @@
 let currentRoute = {};
 let currentMeal = '';
 let currentDate = '';
-let currentTab = ''; // ✅ По умолчанию пусто
+let currentTab = 'cafe';
 
 // Инициализация при загрузке
 document.addEventListener('DOMContentLoaded', function() {
@@ -149,10 +149,13 @@ function renderDayDetail(date) {
             
             var totals = calculateDayTotals(dayData);
             
-            var html = '<div class="date-header" onclick="changeDate()" title="Нажмите для изменения даты">' + dateString + ' 📅</div>' +
+            var html = '<div class="date-header">' + dateString + '</div>' +
                 '<div class="day-header">' +
-                    '<button class="btn btn-primary" onclick="window.location.hash=\'/\'">← Назад</button>' +
-                    '<button class="btn btn-secondary" onclick="copyDay()">Копировать</button>' +
+                    '<div class="header-buttons">' +
+                        '<button class="btn btn-secondary" onclick="copyDay()">Копировать</button>' +
+                        '<button class="btn btn-secondary" onclick="changeDate()">Изменить дату</button>' +
+                    '</div>' +
+                    '<button class="btn btn-primary" onclick="window.location.hash=\'/\'">Назад</button>' +
                 '</div>';
             
             var meals = [
@@ -161,16 +164,16 @@ function renderDayDetail(date) {
                 {key: 'dinner', title: 'Ужин'}
             ];
             
-				for (var i = 0; i < meals.length; i++) {
-					var meal = meals[i];
-					html += '<div class="meal-block">' +
-						'<div class="meal-title">' + meal.title + '</div>' +
-						'<div class="meal-content">' +
-							renderDishes(dayData.meals[meal.key] || [], date, meal.key) +
-							'<button class="add-dish-btn" onclick="openAddDishModal(\'' + meal.key + '\')">добавить</button>' +
-						'</div>' +
-					'</div>';
-				}
+            for (var i = 0; i < meals.length; i++) {
+                var meal = meals[i];
+                html += '<div class="meal-block">' +
+                    '<div class="meal-title">' + meal.title + '</div>' +
+                    '<div class="meal-content">' +
+                        renderDishes(dayData.meals[meal.key] || [], date, meal.key) +
+                        '<button class="add-dish-btn" onclick="openAddDishModal(\'' + meal.key + '\')">добавить</button>' +
+                    '</div>' +
+                '</div>';
+            }
             
             html += '<div class="daily-total">' +
                 '<div class="total-title">Итого КБЖУ за день</div>' +
@@ -199,11 +202,11 @@ function renderDishes(dishes, date, meal) {
         var dish = dishes[i];
         html += '<div class="dish-item">' +
             '<button class="dish-delete" onclick="deleteDish(\'' + date + '\', \'' + meal + '\', \'' + dish.id + '\')">×</button>' +
+            '<input type="number" class="dish-weight" data-dish-id="' + dish.id + '" data-meal="' + meal + '" value="' + (dish.weight || 100) + '" min="1" max="10000" onchange="updateWeight(\'' + date + '\', \'' + meal + '\', \'' + dish.id + '\', this.value)">' +
             '<div class="dish-info">' +
                 '<div class="dish-name">' + (i+1) + '. ' + dish.name + '</div>' +
                 '<div class="dish-nutrients">Кал: ' + dish.calories + ' | Белки: ' + dish.proteins + ' | Жиры: ' + dish.fats + ' | Углеводы: ' + dish.carbs + '</div>' +
             '</div>' +
-            '<input type="number" class="dish-weight" data-dish-id="' + dish.id + '" data-meal="' + meal + '" value="' + (dish.weight || 100) + '" min="1" max="10000" onchange="updateWeight(\'' + date + '\', \'' + meal + '\', \'' + dish.id + '\', this.value)">' +
         '</div>';
     }
     return html;
@@ -266,23 +269,22 @@ function calculateDayTotals(dayData) {
     };
 }
 
-// Страница 3: Модальное окно добавления блюда
+// Модальное окно добавления блюда
 function openAddDishModal(meal) {
     currentMeal = meal;
     console.log('Opening modal for meal:', meal);
     
     var modal = document.createElement('div');
     modal.className = 'modal-overlay';
-    // ✅ Изменено: ни одна вкладка не активна по умолчанию
     modal.innerHTML = 
         '<div class="modal-content">' +
             '<div class="modal-header">Добавление блюда</div>' +
             '<div class="tabs">' +
-                '<div class="tab" data-source="cafe" onclick="switchTab(\'cafe\')">Кафе</div>' +
+                '<div class="tab active" data-source="cafe" onclick="switchTab(\'cafe\')">Кафе</div>' +
                 '<div class="tab" data-source="recipes" onclick="switchTab(\'recipes\')">Рецепты</div>' +
                 '<div class="tab" data-source="buy" onclick="switchTab(\'buy\')">Купить</div>' +
             '</div>' +
-            '<input type="text" class="search-input" id="searchInput" placeholder="Выберите вкладку и введите поиск" oninput="performSearch()">' +
+            '<input type="text" class="search-input" id="searchInput" placeholder="Поиск по названию из csv" oninput="performSearch()">' +
             '<div class="search-results" id="searchResults"></div>' +
         '</div>';
 
@@ -294,7 +296,7 @@ function openAddDishModal(meal) {
         }
     });
 
-    // ✅ Не делаем поиск по умолчанию
+    performSearch();
 }
 
 function switchTab(source) {
@@ -312,13 +314,6 @@ function switchTab(source) {
 function performSearch() {
     var query = document.getElementById('searchInput').value;
     var resultsDiv = document.getElementById('searchResults');
-    
-    // ✅ Если вкладка не выбрана, не делаем поиск
-    if (!currentTab) {
-        resultsDiv.innerHTML = '<div class="loading">Выберите вкладку</div>';
-        return;
-    }
-    
     console.log('Searching:', currentTab, query);
 
     resultsDiv.innerHTML = '<div class="loading">Поиск...</div>';
@@ -432,27 +427,9 @@ function copyDay() {
     });
 }
 
-// ✅ Изменено: календарь вместо prompt
 function changeDate() {
-    var modal = document.createElement('div');
-    modal.className = 'modal-overlay';
-    modal.innerHTML = 
-        '<div class="modal-content">' +
-            '<div class="modal-header">Изменить дату</div>' +
-            '<input type="date" id="datePicker" value="' + currentDate + '" style="width:100%;padding:12px;font-size:16px;margin-bottom:15px;">' +
-            '<button class="btn btn-primary" onclick="confirmDateChange()" style="width:100%;">Применить</button>' +
-            '<button class="btn btn-secondary" onclick="this.closest(\'.modal-overlay\').remove()" style="width:100%;margin-top:10px;">Отмена</button>' +
-        '</div>';
-    document.body.appendChild(modal);
-}
-
-function confirmDateChange() {
-    var newDate = document.getElementById('datePicker').value;
-    if (!newDate || newDate === currentDate) {
-        var modal = document.querySelector('.modal-overlay');
-        if (modal) modal.remove();
-        return;
-    }
+    var newDate = prompt('Введите новую дату (ГГГГ-ММ-ДД):', currentDate);
+    if (!newDate || newDate === currentDate) return;
     
     fetch('api.php?action=updateDate', {
         method: 'POST',
