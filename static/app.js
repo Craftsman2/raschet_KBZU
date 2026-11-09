@@ -41,11 +41,9 @@ function renderDaysList() {
             var html = '<h1 class="page-title">Расчет КБЖУ</h1>';
             
             if (data.future) {
-                for (var date in data.future) {
-                    if (data.future.hasOwnProperty(date)) {
-                        html += renderDayCard(date, data.future[date], today, false);
-                    }
-                }
+                Object.keys(data.future).sort().reverse().forEach(function(date) {
+                    html += renderDayCard(date, data.future[date], today, false);
+                });
             }
             
             if (data.current) {
@@ -58,11 +56,9 @@ function renderDaysList() {
             
             if (data.past && Object.keys(data.past).length > 0) {
                 html += '<div class="archive-divider"><span>Архив</span></div>';
-                for (var date in data.past) {
-                    if (data.past.hasOwnProperty(date)) {
-                        html += renderDayCard(date, data.past[date], today, false);
-                    }
-                }
+                Object.keys(data.past).sort().reverse().forEach(function(date) {
+                    html += renderDayCard(date, data.past[date], today, false);
+                });
             }
             
             app.innerHTML = html;

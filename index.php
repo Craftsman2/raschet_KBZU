@@ -290,7 +290,7 @@ function getDays()
     $today = date('Y-m-d');
     $changed = false;
 
-    foreach (array(0, 1, 2) as $offset) {
+    foreach (array(0, 1, 2, 3) as $offset) {
         $d = date('Y-m-d', strtotime("+$offset day"));
         if (!isset($data['days'][$d])) {
             $data['days'][$d] = emptyDay($d);
@@ -313,7 +313,7 @@ function getDays()
             $past[$date] = $dayData;
         }
     }
-    ksort($future);
+    krsort($future); // от самой дальней даты к ближайшей
     krsort($past);
 
     return array('future' => $future, 'current' => $current, 'past' => $past);
