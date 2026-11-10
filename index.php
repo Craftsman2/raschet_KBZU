@@ -586,6 +586,7 @@ function searchCSV($key, $query)
         }
         $results[] = array(
             'name' => $name,
+            'cafe' => pick($row, array('Кафе', 'Cafe')),
             'calories' => floatval(pick($row, array('Калории на 100гр', 'Калорий на 100гр'), 0)),
             'proteins' => floatval(pick($row, array('Белки на 100гр'), 0)),
             'fats' => floatval(pick($row, array('Жиры на 100гр'), 0)),

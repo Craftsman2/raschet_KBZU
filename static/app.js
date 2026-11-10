@@ -545,7 +545,7 @@ function performSearch() {
                 var item = data[i];
                 var itemData = encodeURIComponent(JSON.stringify(item));
                 html += '<div class="result-item" onclick="addDishFromSearch(\'' + itemData + '\')">' +
-                    '<div class="result-name">' + item.name + '</div>' +
+                    '<div class="result-name">' + item.name + (currentTab === 'cafe' && item.cafe ? ' (' + item.cafe + ')' : '') + '</div>' +
                     '<div class="result-nutrients">Кал: ' + item.calories + ' | Белки: ' + item.proteins + ' | Жиры: ' + item.fats + ' | Углеводы: ' + item.carbs + (item.total_weight !== 100 ? ' | Вес: ' + item.total_weight + 'г' : '') + '</div>' +
                 '</div>';
             }
