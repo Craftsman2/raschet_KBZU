@@ -573,7 +573,7 @@ function addDish(dishData) {
         fats_per_100: dishData.fats,
         carbs_per_100: dishData.carbs,
         total_weight: dishData.total_weight || 100,
-        weight: 100,
+        weight: (currentTab === 'recipes' && dishData.total_weight) ? Math.round(dishData.total_weight) : 100,
         calories: dishData.calories,
         proteins: dishData.proteins,
         fats: dishData.fats,
@@ -600,28 +600,91 @@ function addDish(dishData) {
     });
 }
 
+// Приводит введённую дату (ГГГГ-ММ-ДД, ГГГГ-М-Д, ДД.ММ.ГГГГ) к формату ГГГГ-ММ-ДД; null если дата некорректна
+function parseDateInput(str) {
+    str = String(str || '').trim();
+    var y, m, d, match;
+    if ((match = str.match(/^(\d{4})[-.\/](\d{1,2})[-.\/](\d{1,2})$/))) {
+        y = +match[1]; m = +match[2]; d = +match[3];
+    } else if ((match = str.match(/^(\d{1,2})[-.\/](\d{1,2})[-.\/](\d{4})$/))) {
+        d = +match[1]; m = +match[2]; y = +match[3];
+    } else {
+        return null;
+    }
+    var check = new Date(Date.UTC(y, m - 1, d));
+    if (check.getUTCFullYear() !== y || check.getUTCMonth() !== m - 1 || check.getUTCDate() !== d) return null;
+    return y + '-' + ('0' + m).slice(-2) + '-' + ('0' + d).slice(-2);
+}
+
+function nextDay(date) {
+    var p = date.split('-');
+    var d = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] + 1));
+    return d.getUTCFullYear() + '-' + ('0' + (d.getUTCMonth() + 1)).slice(-2) + '-' + ('0' + d.getUTCDate()).slice(-2);
+}
+
+function dayHasDishes(dayData) {
+    if (!dayData || !dayData.meals) return false;
+    for (var meal in dayData.meals) {
+        if (dayData.meals.hasOwnProperty(meal) && dayData.meals[meal] && dayData.meals[meal].length > 0) return true;
+    }
+    return false;
+}
+
 function copyDay() {
-    var newDate = prompt('Введите дату для копирования (ГГГГ-ММ-ДД):', currentDate);
-    if (!newDate) return;
-    
-    fetch('?action=copyDay', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            fromDate: currentDate,
-            toDate: newDate
+    var input = prompt('Введите дату, на которую скопировать (ГГГГ-ММ-ДД):', nextDay(currentDate));
+    if (!input) return;
+
+    var newDate = parseDateInput(input);
+    if (!newDate) {
+        alert('Неверная дата. Введите в формате ГГГГ-ММ-ДД, например 2026-11-12');
+        return;
+    }
+    if (newDate === currentDate) {
+        alert('Выберите дату, отличную от текущей');
+        return;
+    }
+
+    fetch('?action=getDay&date=' + newDate)
+        .then(function(response) { return response.json(); })
+        .then(function(target) {
+            if (dayHasDishes(target) && !confirm('На ' + newDate + ' уже есть блюда. Заменить их?')) {
+                return null;
+            }
+            return fetch('?action=copyDay', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    fromDate: currentDate,
+                    toDate: newDate
+                })
+            }).then(function(response) { return response.json(); });
         })
-    })
-    .then(function() {
-        alert('День скопирован!');
-        window.location.hash = '/day/' + newDate;
-    });
+        .then(function(result) {
+            if (result === null) return;
+            if (!result || !result.success) {
+                alert('Не удалось скопировать день' + (result && result.error ? ': ' + result.error : ''));
+                return;
+            }
+            alert('День скопирован!');
+            window.location.hash = '/day/' + newDate;
+        })
+        .catch(function(error) {
+            console.error('Copy day error:', error);
+            alert('Ошибка копирования: ' + error.message);
+        });
 }
 
 function changeDate() {
-    var newDate = prompt('Введите новую дату (ГГГГ-ММ-ДД):', currentDate);
-    if (!newDate || newDate === currentDate) return;
-    
+    var input = prompt('Введите новую дату (ГГГГ-ММ-ДД):', currentDate);
+    if (!input) return;
+
+    var newDate = parseDateInput(input);
+    if (!newDate) {
+        alert('Неверная дата. Введите в формате ГГГГ-ММ-ДД, например 2026-11-12');
+        return;
+    }
+    if (newDate === currentDate) return;
+
     fetch('?action=updateDate', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -630,7 +693,16 @@ function changeDate() {
             newDate: newDate
         })
     })
-    .then(function() {
+    .then(function(response) { return response.json(); })
+    .then(function(result) {
+        if (!result || !result.success) {
+            alert('Не удалось изменить дату');
+            return;
+        }
         window.location.hash = '/day/' + newDate;
+    })
+    .catch(function(error) {
+        console.error('Change date error:', error);
+        alert('Ошибка: ' + error.message);
     });
 }
