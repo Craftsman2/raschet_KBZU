@@ -1,0 +1,599 @@
+{
+    "days": {
+        "2026-11-08": {
+            "date": "2026-11-08",
+            "meals": {
+                "breakfast": [],
+                "lunch": [],
+                "dinner": [
+                    {
+                        "name": "Кокорито куриный оладушек",
+                        "source": "cafe",
+                        "calories_per_100": 367,
+                        "proteins_per_100": 20,
+                        "fats_per_100": 28,
+                        "carbs_per_100": 10,
+                        "total_weight": 100,
+                        "weight": 20,
+                        "calories": 73,
+                        "proteins": 4,
+                        "fats": 5.6,
+                        "carbs": 2,
+                        "id": "6af0792c5f328"
+                    },
+                    {
+                        "name": "Смузи овощной зеленый клетчатка (вместо салата)",
+                        "source": "recipes",
+                        "calories_per_100": 153.3,
+                        "proteins_per_100": 6.7,
+                        "fats_per_100": 9.3,
+                        "carbs_per_100": 11.5,
+                        "total_weight": 224,
+                        "weight": 10,
+                        "calories": 7,
+                        "proteins": 0.3,
+                        "fats": 0.4,
+                        "carbs": 0.5,
+                        "id": "6af07ebd166ff"
+                    }
+                ]
+            },
+            "weight": 60
+        },
+        "2026-11-09": {
+            "date": "2026-11-09",
+            "meals": {
+                "breakfast": [
+                    {
+                        "name": "Овсянка в блендере с манго на ночь",
+                        "source": "recipes",
+                        "calories_per_100": 543,
+                        "proteins_per_100": 14,
+                        "fats_per_100": 12,
+                        "carbs_per_100": 95,
+                        "total_weight": 505,
+                        "weight": 174,
+                        "calories": 187,
+                        "proteins": 4.8,
+                        "fats": 4.1,
+                        "carbs": 32.7,
+                        "id": "6af0848accb47"
+                    },
+                    {
+                        "name": "Йогурт сладкий С добавками",
+                        "source": "buy",
+                        "calories_per_100": 110,
+                        "proteins_per_100": 4,
+                        "fats_per_100": 5,
+                        "carbs_per_100": 14,
+                        "total_weight": 100,
+                        "weight": 130,
+                        "calories": 143,
+                        "proteins": 5.2,
+                        "fats": 6.5,
+                        "carbs": 18.2,
+                        "id": "6af084a1ae3f7"
+                    },
+                    {
+                        "name": "Протеин",
+                        "source": "buy",
+                        "calories_per_100": 387,
+                        "proteins_per_100": 74,
+                        "fats_per_100": 6.2,
+                        "carbs_per_100": 9.4,
+                        "total_weight": 100,
+                        "weight": 15,
+                        "calories": 58,
+                        "proteins": 11.1,
+                        "fats": 0.9,
+                        "carbs": 1.4,
+                        "id": "6af084ad78656"
+                    }
+                ],
+                "lunch": [],
+                "dinner": []
+            }
+        },
+        "2026-11-10": {
+            "date": "2026-11-10",
+            "meals": {
+                "breakfast": [
+                    {
+                        "name": "Овсянка в блендере с манго на ночь",
+                        "source": "recipes",
+                        "calories_per_100": 543,
+                        "proteins_per_100": 14,
+                        "fats_per_100": 12,
+                        "carbs_per_100": 95,
+                        "total_weight": 505,
+                        "weight": 131,
+                        "calories": 141,
+                        "proteins": 3.6,
+                        "fats": 3.1,
+                        "carbs": 24.6,
+                        "id": "6af21739c7e19"
+                    },
+                    {
+                        "name": "Йогурт сладкий С добавками",
+                        "source": "buy",
+                        "calories_per_100": 110,
+                        "proteins_per_100": 4,
+                        "fats_per_100": 5,
+                        "carbs_per_100": 14,
+                        "total_weight": 100,
+                        "weight": 130,
+                        "calories": 143,
+                        "proteins": 5.2,
+                        "fats": 6.5,
+                        "carbs": 18.2,
+                        "id": "6af21739c7e20"
+                    },
+                    {
+                        "name": "Протеин",
+                        "source": "buy",
+                        "calories_per_100": 387,
+                        "proteins_per_100": 74,
+                        "fats_per_100": 6.2,
+                        "carbs_per_100": 9.4,
+                        "total_weight": 100,
+                        "weight": 15,
+                        "calories": 58,
+                        "proteins": 11.1,
+                        "fats": 0.9,
+                        "carbs": 1.4,
+                        "id": "6af21739c7e21"
+                    },
+                    {
+                        "name": "Колбаса вареная докторская",
+                        "source": "buy",
+                        "calories_per_100": 228,
+                        "proteins_per_100": 12,
+                        "fats_per_100": 20,
+                        "carbs_per_100": 0,
+                        "total_weight": 100,
+                        "weight": 25,
+                        "calories": 57,
+                        "proteins": 3,
+                        "fats": 5,
+                        "carbs": 0,
+                        "id": "6af2e2355c6f9"
+                    },
+                    {
+                        "name": "Хлеб черный ржаной",
+                        "source": "buy",
+                        "calories_per_100": 237,
+                        "proteins_per_100": 8.1,
+                        "fats_per_100": 1.4,
+                        "carbs_per_100": 46.9,
+                        "total_weight": 100,
+                        "weight": 25,
+                        "calories": 59,
+                        "proteins": 2,
+                        "fats": 0.4,
+                        "carbs": 11.7,
+                        "id": "6af2e24015f3f"
+                    }
+                ],
+                "lunch": [
+                    {
+                        "name": "Киш из лаваша",
+                        "source": "recipes",
+                        "calories_per_100": 850,
+                        "proteins_per_100": 52,
+                        "fats_per_100": 51,
+                        "carbs_per_100": 45,
+                        "total_weight": 493,
+                        "weight": 251,
+                        "calories": 433,
+                        "proteins": 26.5,
+                        "fats": 26,
+                        "carbs": 22.9,
+                        "id": "6af34a55834b1"
+                    },
+                    {
+                        "name": "Шоколад с орехами в микроволновке",
+                        "source": "recipes",
+                        "calories_per_100": 1026.3,
+                        "proteins_per_100": 23.7,
+                        "fats_per_100": 77.8,
+                        "carbs_per_100": 58.1,
+                        "total_weight": 175,
+                        "weight": 30,
+                        "calories": 176,
+                        "proteins": 4.1,
+                        "fats": 13.3,
+                        "carbs": 10,
+                        "id": "6af34a6f8406c"
+                    }
+                ],
+                "dinner": [
+                    {
+                        "name": "Киш из лаваша",
+                        "source": "recipes",
+                        "calories_per_100": 850,
+                        "proteins_per_100": 52,
+                        "fats_per_100": 51,
+                        "carbs_per_100": 45,
+                        "total_weight": 493,
+                        "weight": 281,
+                        "calories": 484,
+                        "proteins": 29.6,
+                        "fats": 29.1,
+                        "carbs": 25.6,
+                        "id": "6af34a7ee1fd8"
+                    }
+                ]
+            }
+        },
+        "2026-11-12": {
+            "date": "2026-11-12",
+            "meals": {
+                "breakfast": [
+                    {
+                        "name": "Овсянка в блендере с манго на ночь",
+                        "source": "recipes",
+                        "calories_per_100": 543,
+                        "proteins_per_100": 14,
+                        "fats_per_100": 12,
+                        "carbs_per_100": 95,
+                        "total_weight": 505,
+                        "weight": 227,
+                        "calories": 244,
+                        "proteins": 6.3,
+                        "fats": 5.4,
+                        "carbs": 42.7,
+                        "id": "6af4a5d7d5671"
+                    },
+                    {
+                        "name": "Йогурт сладкий С добавками",
+                        "source": "buy",
+                        "calories_per_100": 110,
+                        "proteins_per_100": 4,
+                        "fats_per_100": 5,
+                        "carbs_per_100": 14,
+                        "total_weight": 100,
+                        "weight": 130,
+                        "calories": 143,
+                        "proteins": 5.2,
+                        "fats": 6.5,
+                        "carbs": 18.2,
+                        "id": "6af4a5f145e76"
+                    },
+                    {
+                        "name": "Шоколад с орехами в микроволновке",
+                        "source": "recipes",
+                        "calories_per_100": 1026.3,
+                        "proteins_per_100": 23.7,
+                        "fats_per_100": 77.8,
+                        "carbs_per_100": 58.1,
+                        "total_weight": 175,
+                        "weight": 30,
+                        "calories": 176,
+                        "proteins": 4.1,
+                        "fats": 13.3,
+                        "carbs": 10,
+                        "id": "6af4a7fc6ff61"
+                    },
+                    {
+                        "name": "Протеин",
+                        "source": "buy",
+                        "calories_per_100": 387,
+                        "proteins_per_100": 74,
+                        "fats_per_100": 6.2,
+                        "carbs_per_100": 9.4,
+                        "total_weight": 100,
+                        "weight": 15,
+                        "calories": 58,
+                        "proteins": 11.1,
+                        "fats": 0.9,
+                        "carbs": 1.4,
+                        "id": "6af4a813e1476"
+                    },
+                    {
+                        "name": "Шоколад с орехами в микроволновке",
+                        "source": "recipes",
+                        "calories_per_100": 1026.3,
+                        "proteins_per_100": 23.7,
+                        "fats_per_100": 77.8,
+                        "carbs_per_100": 58.1,
+                        "total_weight": 175,
+                        "weight": 30,
+                        "calories": 176,
+                        "proteins": 4.1,
+                        "fats": 13.3,
+                        "carbs": 10,
+                        "id": "6af4cf75e3c17"
+                    }
+                ],
+                "lunch": [
+                    {
+                        "name": "Мясная лазанья",
+                        "source": "cafe",
+                        "calories_per_100": 185.2,
+                        "proteins_per_100": 8.4,
+                        "fats_per_100": 10.8,
+                        "carbs_per_100": 13.6,
+                        "total_weight": 100,
+                        "weight": 281,
+                        "calories": 520,
+                        "proteins": 23.6,
+                        "fats": 30.3,
+                        "carbs": 38.2,
+                        "id": "6af4cf55b2fb1"
+                    },
+                    {
+                        "name": "Батончики шоколадные",
+                        "source": "buy",
+                        "calories_per_100": 570,
+                        "proteins_per_100": 7.5,
+                        "fats_per_100": 38,
+                        "carbs_per_100": 49,
+                        "total_weight": 100,
+                        "weight": 21,
+                        "calories": 120,
+                        "proteins": 1.6,
+                        "fats": 8,
+                        "carbs": 10.3,
+                        "id": "6af4cfc03e05a"
+                    }
+                ],
+                "dinner": []
+            }
+        },
+        "2026-11-13": {
+            "date": "2026-11-13",
+            "meals": {
+                "breakfast": [
+                    {
+                        "name": "Сырники со сметаной и вареньем",
+                        "source": "cafe",
+                        "calories_per_100": 312.5,
+                        "proteins_per_100": 8.5,
+                        "fats_per_100": 18.5,
+                        "carbs_per_100": 28,
+                        "total_weight": 100,
+                        "weight": 160,
+                        "calories": 500,
+                        "proteins": 13.6,
+                        "fats": 29.6,
+                        "carbs": 44.8,
+                        "id": "6af5f253c73c3"
+                    }
+                ],
+                "lunch": [
+                    {
+                        "name": "Митболы",
+                        "source": "cafe",
+                        "calories_per_100": 156.5,
+                        "proteins_per_100": 13,
+                        "fats_per_100": 10.5,
+                        "carbs_per_100": 2.5,
+                        "total_weight": 100,
+                        "weight": 100,
+                        "calories": 156.5,
+                        "proteins": 13,
+                        "fats": 10.5,
+                        "carbs": 2.5,
+                        "id": "6af739b3096ac"
+                    },
+                    {
+                        "name": "Батончики шоколадные",
+                        "source": "buy",
+                        "calories_per_100": 570,
+                        "proteins_per_100": 7.5,
+                        "fats_per_100": 38,
+                        "carbs_per_100": 49,
+                        "total_weight": 100,
+                        "weight": 21,
+                        "calories": 120,
+                        "proteins": 1.6,
+                        "fats": 8,
+                        "carbs": 10.3,
+                        "id": "6af739be09b35"
+                    }
+                ],
+                "dinner": [
+                    {
+                        "name": "Шоколад с орехами в микроволновке",
+                        "source": "recipes",
+                        "calories_per_100": 1026.3,
+                        "proteins_per_100": 23.7,
+                        "fats_per_100": 77.8,
+                        "carbs_per_100": 58.1,
+                        "total_weight": 175,
+                        "weight": 30,
+                        "calories": 176,
+                        "proteins": 4.1,
+                        "fats": 13.3,
+                        "carbs": 10,
+                        "id": "6af739f905a65"
+                    },
+                    {
+                        "name": "Протеин",
+                        "source": "buy",
+                        "calories_per_100": 387,
+                        "proteins_per_100": 74,
+                        "fats_per_100": 6.2,
+                        "carbs_per_100": 9.4,
+                        "total_weight": 100,
+                        "weight": 15,
+                        "calories": 58,
+                        "proteins": 11.1,
+                        "fats": 0.9,
+                        "carbs": 1.4,
+                        "id": "6af73a01d2a22"
+                    },
+                    {
+                        "name": "Киш из лаваша",
+                        "source": "recipes",
+                        "calories_per_100": 866.5,
+                        "proteins_per_100": 54.2,
+                        "fats_per_100": 51.7,
+                        "carbs_per_100": 45.7,
+                        "total_weight": 507,
+                        "weight": 507,
+                        "calories": 866.5,
+                        "proteins": 54.2,
+                        "fats": 51.7,
+                        "carbs": 45.7,
+                        "id": "6af770d5dc953"
+                    }
+                ]
+            }
+        },
+        "2026-11-14": {
+            "date": "2026-11-14",
+            "meals": {
+                "breakfast": [],
+                "lunch": [],
+                "dinner": []
+            }
+        },
+        "2026-11-11": {
+            "date": "2026-11-11",
+            "meals": {
+                "breakfast": [
+                    {
+                        "name": "Овсянка в блендере с манго на ночь",
+                        "source": "recipes",
+                        "calories_per_100": 543,
+                        "proteins_per_100": 14,
+                        "fats_per_100": 12,
+                        "carbs_per_100": 95,
+                        "total_weight": 505,
+                        "weight": 150,
+                        "calories": 161,
+                        "proteins": 4.2,
+                        "fats": 3.6,
+                        "carbs": 28.2,
+                        "id": "6af3934d22a24"
+                    },
+                    {
+                        "name": "Йогурт сладкий С добавками",
+                        "source": "buy",
+                        "calories_per_100": 110,
+                        "proteins_per_100": 4,
+                        "fats_per_100": 5,
+                        "carbs_per_100": 14,
+                        "total_weight": 100,
+                        "weight": 130,
+                        "calories": 143,
+                        "proteins": 5.2,
+                        "fats": 6.5,
+                        "carbs": 18.2,
+                        "id": "6af3934d22a29"
+                    },
+                    {
+                        "name": "Протеин",
+                        "source": "buy",
+                        "calories_per_100": 387,
+                        "proteins_per_100": 74,
+                        "fats_per_100": 6.2,
+                        "carbs_per_100": 9.4,
+                        "total_weight": 100,
+                        "weight": 15,
+                        "calories": 58,
+                        "proteins": 11.1,
+                        "fats": 0.9,
+                        "carbs": 1.4,
+                        "id": "6af3934d22a2a"
+                    },
+                    {
+                        "name": "Колбаса вареная докторская",
+                        "source": "buy",
+                        "calories_per_100": 228,
+                        "proteins_per_100": 12,
+                        "fats_per_100": 20,
+                        "carbs_per_100": 0,
+                        "total_weight": 100,
+                        "weight": 25,
+                        "calories": 57,
+                        "proteins": 3,
+                        "fats": 5,
+                        "carbs": 0,
+                        "id": "6af3934d22a2b"
+                    },
+                    {
+                        "name": "Хлеб черный ржаной",
+                        "source": "buy",
+                        "calories_per_100": 237,
+                        "proteins_per_100": 8.1,
+                        "fats_per_100": 1.4,
+                        "carbs_per_100": 46.9,
+                        "total_weight": 100,
+                        "weight": 34,
+                        "calories": 81,
+                        "proteins": 2.8,
+                        "fats": 0.5,
+                        "carbs": 15.9,
+                        "id": "6af3934d22a2c"
+                    }
+                ],
+                "lunch": [
+                    {
+                        "name": "Хлеб черный ржаной",
+                        "source": "buy",
+                        "calories_per_100": 237,
+                        "proteins_per_100": 8.1,
+                        "fats_per_100": 1.4,
+                        "carbs_per_100": 46.9,
+                        "total_weight": 100,
+                        "weight": 43,
+                        "calories": 102,
+                        "proteins": 3.5,
+                        "fats": 0.6,
+                        "carbs": 20.2,
+                        "id": "6af452f335036"
+                    },
+                    {
+                        "name": "Колбаса вареная докторская",
+                        "source": "buy",
+                        "calories_per_100": 228,
+                        "proteins_per_100": 12,
+                        "fats_per_100": 20,
+                        "carbs_per_100": 0,
+                        "total_weight": 100,
+                        "weight": 25,
+                        "calories": 57,
+                        "proteins": 3,
+                        "fats": 5,
+                        "carbs": 0,
+                        "id": "6af452fb0d572"
+                    },
+                    {
+                        "name": "Качо э пене с говяжьими щечками в соусе демиглас",
+                        "source": "cafe",
+                        "calories_per_100": 185.2,
+                        "proteins_per_100": 8.4,
+                        "fats_per_100": 10.8,
+                        "carbs_per_100": 13.6,
+                        "total_weight": 100,
+                        "weight": 300,
+                        "calories": 556,
+                        "proteins": 25.2,
+                        "fats": 32.4,
+                        "carbs": 40.8,
+                        "id": "6af4d0442a836"
+                    }
+                ],
+                "dinner": []
+            }
+        },
+        "2026-11-15": {
+            "date": "2026-11-15",
+            "meals": {
+                "breakfast": [],
+                "lunch": [],
+                "dinner": []
+            }
+        },
+        "2026-11-16": {
+            "date": "2026-11-16",
+            "meals": {
+                "breakfast": [],
+                "lunch": [],
+                "dinner": []
+            }
+        }
+    }
+}
